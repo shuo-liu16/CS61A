@@ -1,0 +1,6 @@
+'a_plus_abs_b-correct', (0, 66)
+'a_plus_abs_b_syntax_check-correct', (512, 66)
+'two_of_three-correct', (1024, 66)
+'two_of_three_syntax_check-correct', (1536, 66)
+'largest_factor-correct', (2048, 66)
+'hailstone-correct', (2560, 66)
