@@ -1,0 +1,26 @@
+{
+    "name": "Lab 2",
+    "endpoint": "ucb/cs61a/sp24/lab02",
+    "src": [
+        "lab02.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "lambda",
+        "short-circuit",
+        "hof-wwpd",
+        "count_cond",
+        "composite_identity"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

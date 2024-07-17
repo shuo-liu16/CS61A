@@ -1,0 +1,23 @@
+{
+    "name": "Lab 0",
+    "endpoint": "ucb/cs61a/sp24/lab00",
+    "src": [
+        "lab00.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "twenty_twenty_four",
+        "python-basics"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
