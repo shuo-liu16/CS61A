@@ -1,0 +1,4 @@
+'num_eights-correct', (0, 66)
+'digit_distance-correct', (512, 66)
+'interleaved_sum-correct', (1024, 66)
+'count_coins-correct', (1536, 66)

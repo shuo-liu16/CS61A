@@ -1,0 +1,5 @@
+'print_if-correct', (0, 66)
+'close-correct', (512, 66)
+'squares-correct', (1024, 66)
+'double_eights-correct', (1536, 66)
+'make_onion-correct', (2048, 66)

@@ -1,0 +1,27 @@
+{
+    "name": "Lab 4",
+    "endpoint": "ucb/cs61a/sp24/lab04",
+    "src": [
+        "lab04.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "pokemon",
+        "divide",
+        "buy",
+        "distance",
+        "closer_city",
+        "check_city_abstraction"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

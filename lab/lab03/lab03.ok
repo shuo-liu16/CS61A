@@ -1,0 +1,29 @@
+{
+    "name": "Lab 3",
+    "endpoint": "ucb/cs61a/sp24/lab03",
+    "src": [
+        "lab03.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "lists-wwpd",
+        "print_if",
+        "close",
+        "list-comprehensions-wwpd",
+        "close_list",
+        "squares",
+        "double_eights",
+        "make_onion"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

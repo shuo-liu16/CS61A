@@ -1,0 +1,26 @@
+{
+    "name": "Homework 3",
+    "endpoint": "ucb/cs61a/sp24/hw03",
+    "src": [
+        "hw03.py"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "num_eights",
+        "digit_distance",
+        "interleaved_sum",
+        "count_coins"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "help",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
