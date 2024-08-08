@@ -1,0 +1,24 @@
+{
+    "name": "Homework 6",
+    "endpoint": "ucb/cs61a/sp24/hw06",
+    "src": [
+        "hw06.py"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "VendingMachine",
+        "midsem_survey"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "help",
+        "grading",
+        "analytics",
+        "unlock",
+        "backup"
+    ]
+}

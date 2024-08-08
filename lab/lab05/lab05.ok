@@ -1,0 +1,27 @@
+{
+    "name": "Lab 5",
+    "endpoint": "ucb/cs61a/sp24/lab05",
+    "src": [
+        "lab05.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "list-mutation",
+        "insert_items",
+        "group_by",
+        "iterators-wwpd",
+        "count_occurrences",
+        "repeated"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

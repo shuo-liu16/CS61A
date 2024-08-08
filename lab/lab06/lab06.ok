@@ -1,0 +1,27 @@
+{
+    "name": "Lab 6",
+    "endpoint": "ucb/cs61a/sp24/lab06",
+    "src": [
+        "lab06.py",
+        "classes.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test",
+        "classes.py": "doctest"
+    },
+    "default_tests": [
+        "Account",
+        "Client",
+        "make_change",
+        "ChangeMachine"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

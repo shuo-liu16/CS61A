@@ -1,0 +1,25 @@
+{
+    "name": "Homework 5",
+    "endpoint": "ucb/cs61a/sp24/hw05",
+    "src": [
+        "hw05.py"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "hailstone",
+        "merge",
+        "yield_paths"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "help",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
