@@ -1,10 +1,10 @@
 # 文件结构
 
- - exam：pdf格式的试题
- - hw-desciption：hw的描述文档，也就是hw的题目
- - hw01-10：家庭作业
- - lab00-12：实验
- - proj：项目代码
+- exam：pdf格式的试题
+- hw-desciption：hw的描述文档，也就是hw的题目
+- hw01-10：家庭作业
+- lab00-12：实验
+- proj：项目代码
 
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
 > 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
@@ -12,7 +12,22 @@
 
 ---
 
-@[TOC](文章目录)
+<!-- TOC depthfrom:1 depthto:4 -->
+
+- [文件结构](#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
+- [前言](#%E5%89%8D%E8%A8%80)
+- [一、CS61A是什么？](#%E4%B8%80cs61a%E6%98%AF%E4%BB%80%E4%B9%88)
+- [二、OK自动评分器的使用](#%E4%BA%8Cok%E8%87%AA%E5%8A%A8%E8%AF%84%E5%88%86%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8)
+    - [使用](#%E4%BD%BF%E7%94%A8)
+    - [此外](#%E6%AD%A4%E5%A4%96)
+- [三、期间遇到的一些难点](#%E4%B8%89%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9)
+    - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
+    - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
+    - [cats -> Problem 7](#cats---problem-7)
+- [四、我认为值得注意的地方](#%E5%9B%9B%E6%88%91%E8%AE%A4%E4%B8%BA%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9)
+- [总结](#%E6%80%BB%E7%BB%93)
+
+<!-- /TOC -->
 
 ---
 
@@ -21,7 +36,6 @@
 这里是我学习**CS61A 2024**的一些记录和心得
 
 ---
-
 
 # 一、CS61A是什么？
 
@@ -32,22 +46,24 @@ CS61A通常被认为是一门非常有挑战性但也非常有价值的课程，
 主要是用Python来掌握函数式编程、面向对象以及SQL等等
 
 # 二、OK自动评分器的使用
+
 `py环境的配置我就不多提了，网上很多，我使用的是VS Code`
-## 1.使用
+
+## 使用
+
 写完函数，测试时要呼出终端，但方式不止一种，这是vs的一种方式
 ![请添加图片描述](https://i-blog.csdnimg.cn/direct/b68cd15d588b41ba8c5cab14e512a38f.png)
+![image](https://github.com/user-attachments/assets/291feb49-e1a3-4d67-86fa-3d971da8e998)
 
-![请添加图片描述](https://i-blog.csdnimg.cn/direct/bdae848f51c14d30b48c544fc83e92e3.png)
 也可以在文件夹中打开测评
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/8a2aa83ac3514b76bf3bb0bbbb69a760.png)
+
+![image](https://github.com/user-attachments/assets/f2acf04c-fb11-4902-a891-520201a7eb86)
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/1717e7496cf14f2a8a490d048ff03262.png)
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/8471a855e24d4491a62dedd3ce2cd0cc.png)
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/276dcaf00ef34ad292817e7ffa3edff7.png)
 
 测试代码一般在文档之中都有写：
-
-
 
 ![请添加图片描述](https://i-blog.csdnimg.cn/direct/396987eba612463e9268eb2f1a3192f7.png)
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6d5752dc3f864403bcdcb29ca8094591.png)
@@ -58,12 +74,14 @@ CS61A通常被认为是一门非常有挑战性但也非常有价值的课程，
 python3 ok -q falling --local
 python3 ok -q digit_distance --local
 ```
-## 2. 此外
+
+## 此外
+
 1. [okpy命令生成器](https://ok-help.cs61a.org/)
 
 3. 有一种情况是py版本太高，ok不适用了，降降版本就行了
 
-4. 如果输入代码后报错，也可能是文件解压格式后的地址不正确 
+4. 如果输入代码后报错，也可能是文件解压格式后的地址不正确
 
 - "...\CS61A\hw\hw01\hw01.py"
 - "...\CS61A\lab\lab01\lab01.py"
@@ -71,11 +89,15 @@ python3 ok -q digit_distance --local
 - "...\CS61A\hw\hw05\hw05\hw05.py"  （错误地址）
 有的时候解压完毕可能出现，两个hw05，这时就报错了
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/2567783e57824ab79b08b043eeb1f4ac.png)
+
 # 三、期间遇到的一些难点
+
 我不会每个都有解析的，只是记录一下我学习时遇到的，每个人遇到的可能都不太一样，但还是希望帮助一下和我问题相似的同学
 当然，也可以看看我的例子，分享分享你的解法
 最后，希望各位同学勤于思考，不要太懒惰哦！
-## 0. 写题时的方法
+
+## 写题时的方法
+
 这些题嘛倒不是很难，重要的是对题意的理解，以及上下文的分析
 
  1. 因为是英文，所有你可能需要一款沉浸式翻译的插件
@@ -85,7 +107,8 @@ python3 ok -q digit_distance --local
  4. 接着，你要根据例子，逐步理解函数内部是如何对数据进行操作的
  5. 最后，你可以开始根据你的经验和知识构筑函数啦
 
-## 1. hogs -> Problem 8（make_averaged函数）
+## hogs -> Problem 8（make_averaged函数）
+
 我只是稍作分析哈！
 
  1. 函数的作用：输入参数，调用original_function函数samples_count次，将其值累加汇总起来，求平均。需要注意的是original_function函数的运作，不然的话有些例子很难理解。
@@ -102,7 +125,7 @@ def make_averaged(original_function, samples_count=1000):
     >>> dice = make_test_dice(4, 2, 5, 1)
     >>> averaged_dice = make_averaged(roll_dice, 40)
     >>> averaged_dice(1, dice)  # The avg of 10 4's, 10 2's, 10 5's, and 10 1's
-    3.0				嗨嗨嗨：注意这里，例子过不去，就要再会过头去理解理解roll_dice函数了。
+    3.0    嗨嗨嗨：注意这里，例子过不去，就要再会过头去理解理解roll_dice函数了。
     """
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
@@ -115,14 +138,14 @@ def make_averaged(original_function, samples_count=1000):
     # END PROBLEM 8
 ```
 
-## 2. cats -> Problem 7
+## cats -> Problem 7
+
 1. 这个题使用了动态规划算法（DP），和贪心有点像，但每一步操作都和上一个状态有关
 2. typed: 起始字符串，需要通过编辑操作变换成 source。
-	source: 目标字符串，我们希望 typed 变换成它。
-	limit: 编辑操作的上限。写的时间长，我也忘了为什么没用它就过了
+ source: 目标字符串，我们希望 typed 变换成它。
+ limit: 编辑操作的上限。写的时间长，我也忘了为什么没用它就过了
 3. dp我使用了二维数组，一个维度代表移除，一个添加，两个加起来就是替换了，是不是很妙
 4. 我好像疏忽了点什么，limit应该是提前结束的一个标志，一旦操作数超过limit就自动结束，但是这在二维表里很难操作，不加反而过了
-
 
 ```python
 def minimum_mewtations(typed, source, limit):
@@ -163,6 +186,7 @@ def minimum_mewtations(typed, source, limit):
 ```
 
 # 四、我认为值得注意的地方
+
 其实这个课程让我学到蛮多的，这里有些太过繁琐也不便一一列举了，留心处处皆学问。
 
  1. C++与py中逻辑运算符的差别
@@ -172,9 +196,6 @@ def minimum_mewtations(typed, source, limit):
  5. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
  6. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
 
-
-
 # 总结
 
 本人较菜，有疏漏的地方请及时反馈，多多包涵呦！
-
