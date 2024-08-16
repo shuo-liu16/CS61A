@@ -1,0 +1,24 @@
+{
+    "name": "Lab 8",
+    "endpoint": "ucb/cs61a/sp24/lab08",
+    "src": [
+        "lab08.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "trees-wwpd",
+        "cumulative_mul",
+        "prune_small"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Homework 7",
+    "endpoint": "ucb/cs61a/sp24/hw07",
+    "src": [
+        "hw07.scm"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "pow",
+        "repeatedly-cube",
+        "cadr-caddr"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "help",
+        "backup"
+    ]
+}

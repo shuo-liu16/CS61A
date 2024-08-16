@@ -1,0 +1,26 @@
+{
+    "name": "Homework 8",
+    "endpoint": "ucb/cs61a/sp24/hw08",
+    "src": [
+        "hw08.scm"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "ascending",
+        "filter",
+        "interleave",
+        "no_repeats"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "help",
+        "unlock",
+        "backup"
+    ]
+}

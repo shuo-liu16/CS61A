@@ -1,0 +1,25 @@
+{
+    "name": "Lab 9",
+    "endpoint": "ucb/cs61a/sp24/lab09",
+    "src": [
+        "lab09.scm"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "over_or_under",
+        "make_adder",
+        "composed",
+        "repeat",
+        "gcd"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

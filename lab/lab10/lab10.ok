@@ -1,0 +1,25 @@
+{
+    "name": "Lab 10",
+    "endpoint": "ucb/cs61a/sp24/lab10",
+    "src": [
+        "lab10.py"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "using_pair",
+        "floor_div",
+        "eval_and",
+        "eval_define"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}
