@@ -9,35 +9,37 @@
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
 > 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
 > 目前我还没有学习完毕，仍在更新中
-
+> 2024/8/20 data
 ---
 
 <!-- TOC depthfrom:1 depthto:4 -->
 
 - [文件结构](#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
-- [前言](#%E5%89%8D%E8%A8%80)
-- [一、CS61A是什么？](#%E4%B8%80cs61a%E6%98%AF%E4%BB%80%E4%B9%88)
-- [二、OK自动评分器的使用](#%E4%BA%8Cok%E8%87%AA%E5%8A%A8%E8%AF%84%E5%88%86%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8)
-    - [使用](#%E4%BD%BF%E7%94%A8)
-    - [此外](#%E6%AD%A4%E5%A4%96)
-- [三、期间遇到的一些难点](#%E4%B8%89%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9)
-    - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
-    - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
-    - [cats -> Problem 7](#cats---problem-7)
-- [四、我认为值得注意的地方](#%E5%9B%9B%E6%88%91%E8%AE%A4%E4%B8%BA%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9)
-- [总结](#%E6%80%BB%E7%BB%93)
+    - [前言](#%E5%89%8D%E8%A8%80)
+    - [一、CS61A是什么？](#%E4%B8%80cs61a%E6%98%AF%E4%BB%80%E4%B9%88)
+    - [二、OK自动评分器的使用](#%E4%BA%8Cok%E8%87%AA%E5%8A%A8%E8%AF%84%E5%88%86%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8)
+        - [使用](#%E4%BD%BF%E7%94%A8)
+        - [此外](#%E6%AD%A4%E5%A4%96)
+    - [三、期间遇到的一些难点](#%E4%B8%89%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9)
+        - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
+        - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
+        - [cats -> Problem 7](#cats---problem-7)
+        - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
+        - [Hw7 -> Q1: Pow](#hw7---q1-pow)
+        - [Lab10 -> Q2,Q3,Q4](#lab10---q2q3q4)
+    - [四、我认为值得注意的地方](#%E5%9B%9B%E6%88%91%E8%AE%A4%E4%B8%BA%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9)
+    - [总结](#%E6%80%BB%E7%BB%93)
 
 <!-- /TOC -->
-
 ---
 
-# 前言
+## 前言
 
 这里是我学习**CS61A 2024**的一些记录和心得
 
 ---
 
-# 一、CS61A是什么？
+## 一、CS61A是什么？
 
 CS61A是加州大学伯克利分校（UC Berkeley）的计算机科学导论课程。这门课程旨在教授计算机科学的基本概念和编程技能，主要使用编程语言Python。它是许多学生的第一门计算机科学课程，涵盖了从程序设计基础到数据结构和算法的内容。
 
@@ -45,11 +47,11 @@ CS61A通常被认为是一门非常有挑战性但也非常有价值的课程，
 
 主要是用Python来掌握函数式编程、面向对象以及SQL等等
 
-# 二、OK自动评分器的使用
+## 二、OK自动评分器的使用
 
 `py环境的配置我就不多提了，网上很多，我使用的是VS Code`
 
-## 使用
+### 使用
 
 写完函数，测试时要呼出终端，但方式不止一种，这是vs的一种方式
 ![请添加图片描述](https://i-blog.csdnimg.cn/direct/b68cd15d588b41ba8c5cab14e512a38f.png)
@@ -75,13 +77,13 @@ python3 ok -q falling --local
 python3 ok -q digit_distance --local
 ```
 
-## 此外
+### 此外
 
 1. [okpy命令生成器](https://ok-help.cs61a.org/)
 
-3. 有一种情况是py版本太高，ok不适用了，降降版本就行了
+2. 有一种情况是py版本太高，ok不适用了，降降版本就行了
 
-4. 如果输入代码后报错，也可能是文件解压格式后的地址不正确
+3. 如果输入代码后报错，也可能是文件解压格式后的地址不正确
 
 - "...\CS61A\hw\hw01\hw01.py"
 - "...\CS61A\lab\lab01\lab01.py"
@@ -90,13 +92,13 @@ python3 ok -q digit_distance --local
 有的时候解压完毕可能出现，两个hw05，这时就报错了
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/2567783e57824ab79b08b043eeb1f4ac.png)
 
-# 三、期间遇到的一些难点
+## 三、期间遇到的一些难点
 
 我不会每个都有解析的，只是记录一下我学习时遇到的，每个人遇到的可能都不太一样，但还是希望帮助一下和我问题相似的同学
 当然，也可以看看我的例子，分享分享你的解法
 最后，希望各位同学勤于思考，不要太懒惰哦！
 
-## 写题时的方法
+### 写题时的方法
 
 这些题嘛倒不是很难，重要的是对题意的理解，以及上下文的分析
 
@@ -107,7 +109,7 @@ python3 ok -q digit_distance --local
  4. 接着，你要根据例子，逐步理解函数内部是如何对数据进行操作的
  5. 最后，你可以开始根据你的经验和知识构筑函数啦
 
-## hogs -> Problem 8（make_averaged函数）
+### hogs -> Problem 8（make_averaged函数）
 
 我只是稍作分析哈！
 
@@ -138,7 +140,7 @@ def make_averaged(original_function, samples_count=1000):
     # END PROBLEM 8
 ```
 
-## cats -> Problem 7
+### cats -> Problem 7
 
 1. 这个题使用了动态规划算法（DP），和贪心有点像，但每一步操作都和上一个状态有关
 2. typed: 起始字符串，需要通过编辑操作变换成 source。
@@ -185,17 +187,146 @@ def minimum_mewtations(typed, source, limit):
     return dp[a][b]
 ```
 
-# 四、我认为值得注意的地方
+### Hw4 -> Q3: Balanced
 
-其实这个课程让我学到蛮多的，这里有些太过繁琐也不便一一列举了，留心处处皆学问。
+1. 移动式结构（Mobile）的定义：一个移动式结构由多个臂组成，每个臂可能悬挂一个行星（Planet）或另一个移动式结构（Mobile）。
+2. 平衡的定义：一个移动式结构被认为是平衡的，需要满足以下条件：
+    - 左右两边的扭矩相等。
+    - 每个悬挂在臂端的移动式结构或行星本身也是平衡的。
+3. 这个函数本身不难实现，难在对 arm 结构的理解 与 total_mass(), end()函数的应用,
+4. 实现不是很难，理解以上三个定义即可顺利写出，我就不多说了
+
+```python
+def arm(length, mobile_or_planet):
+    """Construct an arm: a length of rod with a mobile or planet at the end."""
+    assert is_mobile(mobile_or_planet) or is_planet(mobile_or_planet)
+    return ['arm', length, mobile_or_planet]
+    
+def balanced(m):
+    """Return whether m is balanced.
+
+    >>> t, u, v = examples()
+    >>> balanced(t)
+    True
+    >>> balanced(v)
+    True
+    >>> p = mobile(arm(3, t), arm(2, u))
+    >>> balanced(p)
+    False
+    >>> balanced(mobile(arm(1, v), arm(1, p)))
+    False
+    >>> balanced(mobile(arm(1, p), arm(1, v)))
+    False
+    >>> from construct_check import check
+    >>> # checking for abstraction barrier violations by banning indexing
+    >>> check(HW_SOURCE_FILE, 'balanced', ['Index'])
+    True
+    """
+    if is_planet(m): # termination condition
+        return True
+    else: #左右判断，加递归判断
+        left_mass =  total_mass(end(left(m))) * length(left(m))
+        right_mass = total_mass(end(right(m))) * length(right(m))
+        return left_mass == right_mass and balanced(end(left(m))) and balanced(end(right(m)))
+```
+
+### Hw7 -> Q1: Pow
+
+1. 这道题的描述很难评，它大概是想要以下这种效果
+
+    ```scheme
+    scm> (pow-expr 2 0)     ;case 1
+    1
+    scm> (pow-expr 2 1)     ;case 2
+    (* 2 1)
+    scm> (pow-expr 2 5)     ;case 4 odd？ 奇数
+    (* 2 (square (square (* 2 1))))
+
+    scm> (pow-expr 2 15)    ;case 4
+    (* 2 (square (* 2 (square (* 2 (square (* 2 1)))))))
+
+    scm> (pow-expr 2 16)    ;case 3 even？ 偶数
+    (square (square (square (square (* 2 1)))))
+    ```
+
+    > 以上描述来自 Hw11 -> Q3: Exponential Powers
+
+2. 这就是个求幂的函数，你只需要逐步实现case1-4，简简单单？
+3. 写完这道题可以去看看 Hw11 -> Q3: Exponential Powers，差不多是一样的
+4. 哦，对了当情况为偶数时，(- exp 2)是不可取的，原因是太慢了会超时，望周知
+
+```scheme
+(define (square n) (* n n))
+
+(define (pow base exp) 
+  (cond 
+    ((= exp 0) 1)
+    ((= exp 1) base)
+    ((even? exp) (square (pow base (/ exp 2)))) ;减少时间复杂度，避免超时
+    (else (* base (pow base (- exp 1)))))
+)
+```
+
+### Lab10 -> Q2,Q3,Q4
+
+1. 这题说难也不难，你需要多揣摩，毕竟只是填代码，有时候直觉也可以得出答案
+2. 先说有几种情况：
+    a. exp是Pair类型
+    b. exp在OPERATORS（字典）里，转化为所需函数名
+    c. int/bool类型 直接输出
+    d. exp在bindings（字典）里，替换成数值输出
+3. case a 细分
+    - operator is and 逻辑操作符
+    - operator is define 关键字
+    - 余下的情况就是需要有一个统一的处理，涉及calc_apply(op, args),被包含在OPERATORS字典里
+    > OPERATORS = { "//": floor_div, "+": addition, "-": subtraction, "*": multiplication, "/": division }
+4. operands.map(calc_eval)很重要，快去搜一下map的作用，再揣摩一下代码吧
+5. 逻辑已经有了，我还需要一步步实现嘛？！加油！！
+
+```python
+def calc_eval(exp):
+    """
+    >>> calc_eval(Pair("define", Pair("a", Pair(1, nil))))
+    'a'
+    >>> calc_eval("a")
+    1
+    >>> calc_eval(Pair("+", Pair(1, Pair(2, nil))))
+    3
+    """
+    if isinstance(exp, Pair):
+        operator = exp.first # exp的第一个操作数
+        operands = exp.rest # exp余下的数据
+        if operator == 'and': 
+            return eval_and(operands)
+        elif operator == 'define':
+            return eval_define(operands)
+        else:  
+            return calc_apply(calc_eval(operator), operands.map(calc_eval)) # UPDATE THIS FOR Q2
+    elif exp in OPERATORS:   # Looking up procedures
+        return OPERATORS[exp]
+    elif isinstance(exp, int) or isinstance(exp, bool):   # Numbers and booleans
+        return exp
+    elif exp in bindings: # CHANGE THIS CONDITION FOR Q4
+        return bindings[exp] # UPDATE THIS FOR Q4
+
+def calc_apply(op, args):
+    return op(args)
+```
+
+## 四、我认为值得注意的地方
 
  1. C++与py中逻辑运算符的差别
  2. 条件运算符的使用（"x is greater" if x > y else "y is greater"）
- 3. 这里gcd的实现（同时赋值（tuple unpacking））![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/752c688c6af64128be130d7e86dfaa66.png)
+ 3. 这里gcd的实现（同时赋值（tuple unpacking））
+    ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/752c688c6af64128be130d7e86dfaa66.png)
  4. 如何快速准确构建递归抽象
- 5. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
- 6. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
+ 5. 先转化为柯里化函数，再使用，有什么好处
+ 6. 你对于scheme中的 括号的使用 有什么想法， 用不好会这样报错
+     ![image](https://github.com/user-attachments/assets/fc4fe5aa-76f0-4369-b1c8-75d93aee7818)
+ 8. scheme中，引号与准引号的用法，与py中f{value}相似
+ 9. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
+ 10. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
 
-# 总结
+## 总结
 
 本人较菜，有疏漏的地方请及时反馈，多多包涵呦！
