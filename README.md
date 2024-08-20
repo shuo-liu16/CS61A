@@ -278,7 +278,7 @@ def balanced(m):
 3. case a 细分
     - operator is and 逻辑操作符
     - operator is define 关键字
-    - 余下的情况就是需要有一个统一的处理，涉及calc_apply(op, args),被包含在OPERATORS字典里
+    - 余下的情况就是需要有一个统一的处理，涉及calc_apply(op, args), 被包含在了OPERATORS字典里
     > OPERATORS = { "//": floor_div, "+": addition, "-": subtraction, "*": multiplication, "/": division }
 4. operands.map(calc_eval)很重要，快去搜一下map的作用，再揣摩一下代码吧
 5. 逻辑已经有了，我还需要一步步实现嘛？！加油！！
