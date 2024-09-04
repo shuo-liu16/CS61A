@@ -140,7 +140,7 @@ def make_averaged(original_function, samples_count=1000):
     # END PROBLEM 8
 ```
 
-### cats -> Problem 7
+### cats -> Problem 7 (minimum_mewtations函数)
 
 1. 这个题使用了动态规划算法（DP），和贪心有点像，但每一步操作都和上一个状态有关
 2. typed: 起始字符串，需要通过编辑操作变换成 source。
