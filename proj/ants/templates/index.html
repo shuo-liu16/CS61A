@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Ants vs SomeBees!
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+
+    </head>
+
+    <body>
+        <button class="start-button">
+            START
+        </button>
+        <div class="main-window">
+            <div></div> <!-- left white space -->
+
+            <div class="middle-section">
+
+                <div class="white-space"></div>
+                <div class="game-window">
+
+                    <div class="display-section">
+                        <div class="display-food-div"> Food: 0 </div>
+                        <div class="display-turn-div"> Turn: 0 </div>
+                    </div>
+                    <div class="ants-section"></div>
+                    <div class="game-section">
+                        <div class="tunnel-grid"></div>
+                        <div class="beehive"></div>
+                    </div>
+
+                </div>
+                <div class="white-space"></div>
+
+            </div>
+
+            <div></div> <!-- right white space -->
+
+        </div>
+
+        <audio id="backgroundmusic" loop>
+            <source src="/static/assets/backgroundmusic.mp3" type="audio/mpeg">
+        </audio>
+        <script src="/static/socket.io.min.js"></script>
+        <script src="/static/utility.js"></script>
+        <script src="/static/script.js"></script>
+    </body>
+</html>
+
+
+<!-- html visual structure:
+main-window
+    left white space
+    middle-section
+        top white space
+        game-window
+            display-section (display food count, turn count)
+            ants-section (collection of available ants)
+            game-section (game grid and hive)
+                game grid
+                beehive
+        bottom white space
+    right white space
+
+
+Music from (copyright free, royalty free):
+TheRelaxedMovement at https://www.youtube.com/watch?v=x07EgsEoe0U
+->

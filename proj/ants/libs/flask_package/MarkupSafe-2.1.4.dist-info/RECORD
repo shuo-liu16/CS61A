@@ -1,0 +1,11 @@
+markupsafe/_speedups.cpython-39-darwin.so,sha256=wAOm2NR6eRWAtutX0DLJBQF4Rr1MAKo5hptAZP6qZ-s,35160
+markupsafe/_speedups.c,sha256=X2XvQVtIdcK4Usz70BvkzoOfjTCmQlDkkjYSn-swE0g,7083
+markupsafe/__init__.py,sha256=tRxwyNnEbraoYPIRtDDyRLHLWhF5VjVHmS9S0EqVyoI,10931
+markupsafe/_native.py,sha256=GR86Qvo_GcgKmKreA1WmYN9ud17OFwkww8E-fiW-57s,1713
+markupsafe/_speedups.pyi,sha256=vfMCsOgbAXRNLUXkyuyonG8uEWKYU4PDqNuMaDELAYw,229
+markupsafe/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+MarkupSafe-2.1.4.dist-info/RECORD,,
+MarkupSafe-2.1.4.dist-info/WHEEL,sha256=cABgpcR3h0cnc4AMuKpjsaE5aw1qSnrxpuJorQio3VM,109
+MarkupSafe-2.1.4.dist-info/LICENSE.rst,sha256=SJqOEQhQntmKN7uYPhHg9-HTHwvY-Zp5yESOf_N9B-o,1475
+MarkupSafe-2.1.4.dist-info/top_level.txt,sha256=qy0Plje5IJuvsCBjejJyhDCjEAdcDLK_2agVcex8Z6U,11
+MarkupSafe-2.1.4.dist-info/METADATA,sha256=FG6QyNhkd6O_gW6Ies5gTq1WvWzSBP2ssaQXb6cD_qY,3003

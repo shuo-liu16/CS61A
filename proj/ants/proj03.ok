@@ -1,0 +1,36 @@
+{
+    "name": "Project 3: Ants Vs. SomeBees",
+    "endpoint": "ucb/cs61a/sp24/proj03",
+    "src": [
+        "ants.py"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "00",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08a",
+        "08b",
+        "08c",
+        "09",
+        "10",
+        "11",
+        "12"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "collaborate",
+        "backup"
+    ]
+}

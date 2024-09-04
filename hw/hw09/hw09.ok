@@ -1,0 +1,25 @@
+{
+    "name": "Homework 9",
+    "endpoint": "ucb/cs61a/sp24/hw09",
+    "src": [
+        "hw09.scm"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "curry-cook",
+        "curry-consume",
+        "switch-to-cond"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "help",
+        "unlock",
+        "backup"
+    ]
+}

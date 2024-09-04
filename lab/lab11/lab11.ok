@@ -1,0 +1,20 @@
+{
+    "name": "Lab 11",
+    "endpoint": "ucb/cs61a/sp24/lab11",
+    "src": [
+        "lab11.scm"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}
