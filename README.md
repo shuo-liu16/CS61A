@@ -5,6 +5,7 @@
 - hw01-10：家庭作业
 - lab00-12：实验
 - proj：项目代码
+- project -> tests: 测试案例在这里，也许可以找到测试答案也说不定
 
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
 > 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
@@ -23,7 +24,7 @@
     - [三、期间遇到的一些难点](#%E4%B8%89%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9)
         - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
         - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
-        - [cats -> Problem 7 (minimum_mewtations函数)](#cats---problem-7)
+        - [cats -> Problem 7 minimum_mewtations函数](#cats---problem-7-minimum_mewtations%E5%87%BD%E6%95%B0)
         - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
         - [Hw7 -> Q1: Pow](#hw7---q1-pow)
         - [Lab10 -> Q2,Q3,Q4](#lab10---q2q3q4)
