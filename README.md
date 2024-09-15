@@ -24,7 +24,8 @@
     - [三、期间遇到的一些难点](#%E4%B8%89%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9)
         - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
         - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
-        - [cats -> Problem 7 minimum_mewtations函数](#cats---problem-7-minimum_mewtations%E5%87%BD%E6%95%B0)
+        - [cats -> Problem 7 （minimum_mewtations函数）](#cats---problem-7-minimum_mewtations%E5%87%BD%E6%95%B0)
+        - [Ants](#ants)
         - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
         - [Hw7 -> Q1: Pow](#hw7---q1-pow)
         - [Lab10 -> Q2,Q3,Q4](#lab10---q2q3q4)
@@ -141,7 +142,7 @@ def make_averaged(original_function, samples_count=1000):
     # END PROBLEM 8
 ```
 
-### cats -> Problem 7 (minimum_mewtations函数)
+### cats -> Problem 7 （minimum_mewtations函数）
 
 1. 这个题使用了动态规划算法（DP），和贪心有点像，但每一步操作都和上一个状态有关
 2. typed: 起始字符串，需要通过编辑操作变换成 source。
@@ -187,6 +188,14 @@ def minimum_mewtations(typed, source, limit):
                                    dp[i+1][j] + 1)          
     return dp[a][b]
 ```
+
+### Ants
+
+Hello，别想着在这里找太多教程了！这个项目目的就是为了让你搞懂它的结构。你可能会遇到一些“小麻烦”，但别慌，解决方案都藏在源码里。其实，它没什么复杂的算法，更多的是需要你细心发掘。预祝各位在这趟项目之旅中一路顺风！如果实在需要帮助，不妨翻翻本仓库的Ants项目，阅读源码也是一种乐趣。Good Luck！
+
+- self.place.bees： 一个实例所存在的地点，该地点所存在的bees，返回一个bees列表。
+- 有些问题或许在父类中直接解决会更好。
+- 当你在遍历一个列表的同时对其进行修改时，可能会导致某些元素被跳过，这是因为遍历时列表的长度和索引会发生变化。
 
 ### Hw4 -> Q3: Balanced
 
