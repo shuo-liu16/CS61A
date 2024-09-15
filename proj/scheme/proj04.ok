@@ -1,0 +1,43 @@
+{
+    "name": "Project 4: Scheme Interpreter",
+    "endpoint": "ucb/cs61a/sp24/proj04",
+    "src": [
+        "scheme_eval_apply.py",
+        "scheme_forms.py",
+        "scheme_classes.py",
+        "questions.scm"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test",
+        "tests.scm": "scheme_test"
+    },
+    "default_tests": [
+        "eval_apply",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "tests.scm",
+        "15",
+        "16"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "collaborate",
+        "backup"
+    ]
+}
