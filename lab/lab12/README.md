@@ -29,7 +29,6 @@
         - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
         - [Hw7 -> Q1: Pow](#hw7---q1-pow)
         - [Lab10 -> Q2,Q3,Q4](#lab10---q2q3q4)
-        - [lab12 and hw10](#lab12-and-hw10)
     - [四、我认为值得注意的地方](#%E5%9B%9B%E6%88%91%E8%AE%A4%E4%B8%BA%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9)
     - [总结](#%E6%80%BB%E7%BB%93)
 
@@ -133,6 +132,7 @@ def make_averaged(original_function, samples_count=1000):
     3.0    嗨嗨嗨：注意这里，例子过不去，就要再会过头去理解理解roll_dice函数了。
     """
     # BEGIN PROBLEM 8
+    "*** YOUR CODE HERE ***"
     def average(*args):
         count = 0
         for i in range(samples_count):
@@ -141,8 +141,6 @@ def make_averaged(original_function, samples_count=1000):
     return average
     # END PROBLEM 8
 ```
-
----
 
 ### cats -> Problem 7 （minimum_mewtations函数）
 
@@ -191,8 +189,6 @@ def minimum_mewtations(typed, source, limit):
     return dp[a][b]
 ```
 
----
-
 ### Ants
 
 Hello，别想着在这里找太多教程了！这个项目目的就是为了让你搞懂它的结构。你可能会遇到一些“小麻烦”，但别慌，解决方案都藏在源码里。其实，它没什么复杂的算法，更多的是需要你细心发掘。预祝各位在这趟项目之旅中一路顺风！如果实在需要帮助，不妨翻翻本仓库的Ants项目，阅读源码也是一种乐趣。Good Luck！
@@ -200,8 +196,6 @@ Hello，别想着在这里找太多教程了！这个项目目的就是为了让
 - self.place.bees： 一个实例所存在的地点，该地点所存在的bees，返回一个bees列表。
 - 有些问题或许在父类中直接解决会更好。
 - 当你在遍历一个列表的同时对其进行修改时，可能会导致某些元素被跳过，这是因为遍历时列表的长度和索引会发生变化。
-
----
 
 ### Hw4 -> Q3: Balanced
 
@@ -246,8 +240,6 @@ def balanced(m):
         return left_mass == right_mass and balanced(end(left(m))) and balanced(end(right(m)))
 ```
 
----
-
 ### Hw7 -> Q1: Pow
 
 1. 这道题的描述很难评，它大概是想要以下这种效果
@@ -284,8 +276,6 @@ def balanced(m):
     (else (* base (pow base (- exp 1)))))
 )
 ```
-
----
 
 ### Lab10 -> Q2,Q3,Q4
 
@@ -333,80 +323,15 @@ def calc_apply(op, args):
     return op(args)
 ```
 
----
-
-### lab12 and hw10
-
-1. 如果你和我一样先完成了 HW 10，可能会感到有些困惑。不过，回过头来看 Lab 12，你会恍然大悟，因为基础语法和项目的完成方法在 Lab 12 中都有详细说明。
-2. 这一部分的目的是让大家初步了解 SQL 数据库语言的使用，从逻辑上来说并不复杂，主要是对基础语法的运用。因此，理解它们将对你的学习大有裨益。
-3. 建议先进行 lab12
-
-- SELECT: 指定要查询的列。
-- FROM: 指定查询的数据表。
-- INNER JOIN ... ON: 连接两个表，并指定连接条件。
-- WHERE: 筛选满足特定条件的记录。
-- GROUP BY: 将结果按指定列分组，以便进行聚合计算。
-- HAVING: 对分组后的结果应用条件，通常用于```聚合函数```。
-- ORDER BY: 指定结果集的排序方式。
-  - ASC：表示按升序排序。
-  - DESC：表示按降序排序。
-- AS: 用于给列或表起别名。
-- MAX(), MIN(), AVG(): ```聚合函数```，用于计算最大值、最小值和平均值,这类函数有很多。
-
-接下来，我将给出一个实例，来展示SQL中基础语法的使用
-
-```SQL
--- 创建 departments 表
-CREATE TABLE departments (
-    id INT PRIMARY KEY,              -- 部门 ID
-    department_name VARCHAR(50)      -- 部门名称
-);
-
--- 插入示例数据到 departments 表
-INSERT INTO departments (id, department_name) VALUES
-(1, '人力资源'),
-(2, '技术支持'),
-(3, '市场营销'),
-(4, '财务部');
-
--- 创建 employees 表
-CREATE TABLE employees (
-    id INT PRIMARY KEY,               -- 员工 ID
-    name VARCHAR(50),                 -- 员工姓名
-    salary DECIMAL(10, 2),            -- 员工薪资
-    department_id INT,                -- 部门 ID
-    status VARCHAR(20)                -- 员工状态
-);
-
--- 插入示例数据到 employees 表
-INSERT INTO employees (id, name, salary, department_id, status) VALUES
-(1, '张三', 60000, 1, 'active'),
-(2, '李四', 55000, 1, 'active'),
-(3, '王五', 70000, 2, 'active'),
-(4, '赵六', 40000, 2, 'inactive'),
-(5, '钱七', 80000, 3, 'active'),
-(6, '孙八', 30000, 3, 'active'),
-(7, '周九', 90000, 4, 'active'),
-(8, '吴十', 50000, 4, 'inactive');
-
-SELECT 
-    d.department_name AS department_name,  -- 选择部门名称，并重命名为 department_name
-    MAX(e.salary) AS max_salary,           -- 获取该部门的最高薪资，重命名为 max_salary
-    MIN(e.salary) AS min_salary,           -- 获取该部门的最低薪资，重命名为 min_salary
-    AVG(e.salary) AS avg_salary             -- 获取该部门的平均薪资，重命名为 avg_salary
-FROM 
-    employees e                             -- 从 employees 表中选择数据，并将其简写为 e
-INNER JOIN 
-    departments d ON e.department_id = d.id  -- 内连接 departments 表，通过部门 ID 进行连接
-WHERE 
-    e.status = 'active'                     -- 仅选择状态为 'active' 的员工
-GROUP BY 
-    d.department_name                        -- 按部门名称分组
-HAVING 
-    AVG(e.salary) > 50000                   -- 仅保留平均薪资大于 50000 的部门
-ORDER BY 
-    avg_salary DESC;                        -- 按照平均薪资降序排列结果
-```
+SELECT
+FROM
+INNER JOIN  ON
+ORDER by
+AS
+WHERE
+MAX() MIN() AVG()
+HAVING
+||
 
 ## 四、我认为值得注意的地方
 
@@ -418,9 +343,9 @@ ORDER BY
  5. 先转化为柯里化函数，再使用，有什么好处
  6. 你对于scheme中的 括号的使用 有什么想法， 用不好会这样报错
      ![image](https://github.com/user-attachments/assets/fc4fe5aa-76f0-4369-b1c8-75d93aee7818)
- 7. scheme中，引号与准引号的用法，与py中f{value}相似
- 8. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
- 9. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
+ 8. scheme中，引号与准引号的用法，与py中f{value}相似
+ 9. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
+ 10. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
 
 ## 总结
 

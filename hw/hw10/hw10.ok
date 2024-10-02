@@ -1,0 +1,27 @@
+{
+    "name": "Homework 10",
+    "endpoint": "ucb/cs61a/sp24/hw10",
+    "src": [
+        "hw10.sql",
+        "hw10.py"
+    ],
+    "tests": {
+        "hw*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "by_parent_height",
+        "size_of_dogs",
+        "sentences",
+        "low_variance"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "help",
+        "backup"
+    ]
+}
