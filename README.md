@@ -9,8 +9,8 @@
 
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
 > 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
-> 目前我还没有学习完毕，仍在更新中
-> 2024/8/20 data
+> 目前仍留有proj scheme 未解决，其余均解决完毕
+> 2024/10/2 update lab12，hw10，README.md
 ---
 
 <!-- TOC depthfrom:1 depthto:4 -->
@@ -354,6 +354,8 @@ def calc_apply(op, args):
   - **DESC**: 表示按降序排序。
 - **`AS`**: 用于给列或表起别名。
 - **`MAX()`**, **`MIN()`**, **`AVG()`**: 聚合函数，用于计算最大值、最小值和平均值，这样的函数还有很多。
+
+>如果仍有语法疑问，这个网站可能会帮到你 [SQL](https://www.runoob.com/sql/sql-tutorial.html)
 
 接下来，我将给出一个实例，来展示SQL中基础语法的使用
 
