@@ -134,10 +134,12 @@ def deep_map_mut(func, lnk):
     >>> print(link1)
     <9 <16> 25 36>
     """
-    while lnk is not None:
+    assert isinstance(lnk, Link)
+    while lnk is not Link.empty:
         if isinstance(lnk.first, Link):
             deep_map_mut(func, lnk.first)
-        lnk.first = func(lnk.first)
+        else:
+            lnk.first = func(lnk.first)
         lnk = lnk.rest
 
 
