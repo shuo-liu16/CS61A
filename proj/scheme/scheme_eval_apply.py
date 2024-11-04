@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from math import exp
 import sys
 
 from pair import *
@@ -33,22 +35,29 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         return scheme_forms.SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 3
-        "*** YOUR CODE HERE ***"
+        procedure = scheme_eval(first, env)  # 评估第一个元素以获取过程
+        args = rest.map(lambda exp: scheme_eval(exp, env))  # 评估所有参数
+        return scheme_apply(procedure, args, env)  # 将过程应用于评估后的参数
         # END PROBLEM 3
 
 def scheme_apply(procedure, args, env):
     """Apply Scheme PROCEDURE to argument values ARGS (a Scheme list) in
     Frame ENV, the current environment."""
+
     validate_procedure(procedure)
     if not isinstance(env, Frame):
        assert False, "Not a Frame: {}".format(env)
     if isinstance(procedure, BuiltinProcedure):
-        # BEGIN PROBLEM 2
-        "*** YOUR CODE HERE ***"
-        # END PROBLEM 2
+        list = []
+        text = args
+        while text is not nil:
+            list.append(text.first)
+            text = text.rest
+        if procedure.need_env:
+            list.append(env)
         try:
             # BEGIN PROBLEM 2
-            "*** YOUR CODE HERE ***"
+            return procedure.py_func(*list)
             # END PROBLEM 2
         except TypeError as err:
             raise SchemeError('incorrect number of arguments: {0}'.format(procedure))

@@ -25,6 +25,7 @@
         - [写题时的方法](#%E5%86%99%E9%A2%98%E6%97%B6%E7%9A%84%E6%96%B9%E6%B3%95)
         - [hogs -> Problem 8（make_averaged函数）](#hogs---problem-8make_averaged%E5%87%BD%E6%95%B0)
         - [cats -> Problem 7 （minimum_mewtations函数）](#cats---problem-7-minimum_mewtations%E5%87%BD%E6%95%B0)
+            - [解题步骤，首先你要明白这几点](#%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%E9%A6%96%E5%85%88%E4%BD%A0%E8%A6%81%E6%98%8E%E7%99%BD%E8%BF%99%E5%87%A0%E7%82%B9)
         - [Ants](#ants)
         - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
         - [Hw7 -> Q1: Pow](#hw7---q1-pow)
@@ -34,6 +35,7 @@
     - [总结](#%E6%80%BB%E7%BB%93)
 
 <!-- /TOC -->
+
 ---
 
 ## 前言
@@ -152,6 +154,31 @@ def make_averaged(original_function, samples_count=1000):
  limit: 编辑操作的上限。写的时间长，我也忘了为什么没用它就过了
 3. dp我使用了二维数组，一个维度代表移除，一个添加，两个加起来就是替换了，是不是很妙
 4. 我好像疏忽了点什么，limit应该是提前结束的一个标志，一旦操作数超过limit就自动结束，但是这在二维表里很难操作，不加反而过了
+
+#### 解题步骤，首先你要明白这几点
+
+1. dp 数组（dp table）以及下标的含义
+    `dp[i][j]` 的含义：`dp[i][j]` 表示将 typed 的前 i 个字符转换为 source 的前 j 个字符所需的最少编辑次数。
+2. 确定递推公式
+   - 递推公式：
+   - 如果 `dna1[i-1] == dna2[j-1]，则 dp[i][j] = dp[i-1][j-1]`，即不需要任何编辑操作。
+   - 如果 `dna1[i-1] != dna2[j-1]，则 dp[i][j]` 可以通过以下三种操作之一得到：
+       - 替换：`dp[i-1][j-1] + 1`
+       - 删除：`dp[i-1][j] + 1`
+       - 插入：`dp[i][j-1] + 1`
+   - 所以，`dp[i][j] = min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]) + 1`
+3. dp 数组如何初始化
+   - 初始化：
+       - `dp[0][j]` 表示将空字符串转换为 typed 的前 j 个字符，需要 j 次插入操作。
+       - `dp[i][0]` 表示将 source 的前 i 个字符转换为空字符串，需要 i 次删除操作。
+4. 确定遍历顺序
+   - 遍历顺序：从左到右，从上到下。
+5. 举例推导 dp 数组
+6. 结束条件
+   - 对于 `dp[i][j] <= limit`，即如果操作数超过 limit，则停止计算。
+    【注】：可能很难操作
+
+</details>
 
 ```python
 def minimum_mewtations(typed, source, limit):
