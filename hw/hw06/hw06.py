@@ -140,6 +140,7 @@ def deep_map_mut(func, lnk):
             deep_map_mut(func, lnk.first)
         else:
             lnk.first = func(lnk.first)
+        lnk = lnk.rest
 
 
 def two_list(vals, counts):
