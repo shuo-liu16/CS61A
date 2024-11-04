@@ -10,7 +10,7 @@
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
 > 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
 > 目前仍留有proj scheme 未解决，其余均解决完毕
-> 2024/10/2 update lab12，hw10，README.md
+> 2024/11/4 update 总结了dp题目解题方法【cats -> Problem 7】
 ---
 
 <!-- TOC depthfrom:1 depthto:4 -->
