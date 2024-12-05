@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': 'e92e90f58a272e7a74651635251ade14',
+          'answer': 'Pair(A, Pair(B, nil)), where: A is the symbol being bound, B is an expression whose value should be evaluated and bound to A',
           'choices': [
             r"""
             Pair(A, Pair(B, nil)), where:
@@ -34,12 +34,12 @@ test = {
             """
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False,
           'question': 'What is the structure of the expressions argument to do_define_form?'
         },
         {
-          'answer': '0ed53dce7bacc4766422abc478c5c895',
+          'answer': 'define',
           'choices': [
             'make_child_frame',
             'define',
@@ -47,7 +47,7 @@ test = {
             'bindings'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False,
           'question': r"""
           What method of a Frame instance will bind
@@ -63,20 +63,16 @@ test = {
         {
           'code': r"""
           scm> (define size 2)
-          cc3c061fb8167d02a4ddda1f1c19966e
-          # locked
+          size
           scm> size
-          2b7cdec3904f986982cbd24a0bc12887
-          # locked
+          2
           scm> (define x (+ 7 3))
-          38ba916dc1f41eb239567ee41a251ecd
-          # locked
+          x
           scm> x
-          4bc2fb48972a5d1ec1201b01e766a044
-          # locked
+          10
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {

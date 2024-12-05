@@ -1,4 +1,5 @@
 import builtins
+from tkinter import NO
 
 from pair import *
 
@@ -25,13 +26,15 @@ class Frame:
 
     def define(self, symbol, value):
         """Define Scheme SYMBOL to have VALUE."""
-        # BEGIN PROBLEM 1
+        # BEGIN PROBLEM 1 
+        # Dream：It's just a simple assignment.
         self.bindings[symbol] = value
         # END PROBLEM 1
 
     def lookup(self, symbol):
         """Return the value bound to SYMBOL. Errors if SYMBOL is not found."""
         # BEGIN PROBLEM 1
+        # Dream：This is an environment class. You only need to understand the three situations when querying values.
         if symbol in self.bindings:
             return self.bindings[symbol]
         elif self.parent is not None:
@@ -54,7 +57,7 @@ class Frame:
         if len(formals) != len(vals):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 8
-        "*** YOUR CODE HERE ***"
+        
         # END PROBLEM 8
 
 ##############

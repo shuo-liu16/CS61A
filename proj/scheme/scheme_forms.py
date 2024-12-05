@@ -35,8 +35,25 @@ def do_define_form(expressions, env):
     if scheme_symbolp(signature):
         # assigning a name to a value e.g. (define x (+ 1 2))
         validate_form(expressions, 2, 2) # Checks that expressions is a list of length exactly 2
+
+        print("DEBUG:0", expressions, type(expressions))
+        print("DEBUG:1", expressions.rest, type(expressions.rest))
+        print("DEBUG:2", expressions.rest.first, type(expressions.rest.first))
+        # 想不明白为什么expressions.rest 不行 ，以下或许是原因所在
+        # scm> (define x (+ 7 3))
+        # DEBUG:6
+        # DEBUG:0 (x (+ 7 3)) <class 'pair.Pair'>
+        # DEBUG:1 ((+ 7 3)) <class 'pair.Pair'>
+        # DEBUG:2 (+ 7 3) <class 'pair.Pair'>
+        # DEBUG:6
+        # DEBUG:3
+        # DEBUG:4
+        # DEBUG:4
+        
         # BEGIN PROBLEM 4
-        "*** YOUR CODE HERE ***"
+        value = scheme_eval(expressions.rest.first, env)
+        env.define(signature, value)
+        return signature
         # END PROBLEM 4
     elif isinstance(signature, Pair) and scheme_symbolp(signature.first):
         # defining a named procedure e.g. (define (f x y) (+ x y))
@@ -56,7 +73,9 @@ def do_quote_form(expressions, env):
     """
     validate_form(expressions, 1, 1)
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    # 看 python3 ok -q 05 -u --local 中的例子，容易理解些
+    # 感觉和 problem4 相似，可以用来解开 pro4 的疑惑， 多揣摩
+    return expressions.first
     # END PROBLEM 5
 
 def do_begin_form(expressions, env):
