@@ -1,3 +1,4 @@
+from hmac import new
 from scheme_eval_apply import *
 from scheme_utils import *
 from scheme_classes import *
@@ -36,20 +37,22 @@ def do_define_form(expressions, env):
         # assigning a name to a value e.g. (define x (+ 1 2))
         validate_form(expressions, 2, 2) # Checks that expressions is a list of length exactly 2
 
+        """
         print("DEBUG:0", expressions, type(expressions))
         print("DEBUG:1", expressions.rest, type(expressions.rest))
         print("DEBUG:2", expressions.rest.first, type(expressions.rest.first))
-        # 想不明白为什么expressions.rest 不行 ，以下或许是原因所在
-        # scm> (define x (+ 7 3))
-        # DEBUG:6
-        # DEBUG:0 (x (+ 7 3)) <class 'pair.Pair'>
-        # DEBUG:1 ((+ 7 3)) <class 'pair.Pair'>
-        # DEBUG:2 (+ 7 3) <class 'pair.Pair'>
-        # DEBUG:6
-        # DEBUG:3
-        # DEBUG:4
-        # DEBUG:4
-        
+        如果想不明白为什么expressions.rest 不行 ，以下就是原因所在，这是Pair类的特性
+        scm> (define x (+ 7 3))
+        DEBUG:6
+        DEBUG:0 (x (+ 7 3)) <class 'pair.Pair'>
+        DEBUG:1 ((+ 7 3)) <class 'pair.Pair'>         Flase
+        DEBUG:2 (+ 7 3) <class 'pair.Pair'>           True
+        DEBUG:7
+        DEBUG:3
+        DEBUG:4
+        DEBUG:4
+        x
+        """
         # BEGIN PROBLEM 4
         value = scheme_eval(expressions.rest.first, env)
         env.define(signature, value)
@@ -58,7 +61,14 @@ def do_define_form(expressions, env):
     elif isinstance(signature, Pair) and scheme_symbolp(signature.first):
         # defining a named procedure e.g. (define (f x y) (+ x y))
         # BEGIN PROBLEM 10
-        "*** YOUR CODE HERE ***"
+        function_name = signature.first  # e.g., f
+        parameters = signature.rest  # e.g., (x y)
+        function_body = expressions.rest  # e.g., (+ x y)
+
+        function = LambdaProcedure(parameters, function_body, env)
+        # print("DEBUG:", function.__repr__())
+        env.define(function_name, function)
+        return function_name
         # END PROBLEM 10
     else:
         bad_signature = signature.first if isinstance(signature, Pair) else signature
@@ -72,9 +82,7 @@ def do_quote_form(expressions, env):
     Pair('+', Pair('x', Pair(2, nil)))
     """
     validate_form(expressions, 1, 1)
-    # BEGIN PROBLEM 5
-    # 看 python3 ok -q 05 -u --local 中的例子，容易理解些
-    # 感觉和 problem4 相似，可以用来解开 pro4 的疑惑， 多揣摩
+    # BEGIN PROBLEM 5, Similar to pro4
     return expressions.first
     # END PROBLEM 5
 
@@ -96,12 +104,13 @@ def do_lambda_form(expressions, env):
     >>> env = create_global_frame()
     >>> do_lambda_form(read_line("((x) (+ x 2))"), env) # evaluating (lambda (x) (+ x 2))
     LambdaProcedure(Pair('x', nil), Pair(Pair('+', Pair('x', Pair(2, nil))), nil), <Global Frame>)
+    LambdaProcedure(Pair('x',Pair(y, nil)), Pair(Pair('+', Pair('x', Pair(y, nil))), nil), <Global Frame>)
     """
     validate_form(expressions, 2)
     formals = expressions.first
     validate_formals(formals)
     # BEGIN PROBLEM 7
-    "*** YOUR CODE HERE ***"
+    return LambdaProcedure(formals, expressions.rest, env)
     # END PROBLEM 7
 
 def do_if_form(expressions, env):
@@ -238,7 +247,7 @@ def do_mu_form(expressions, env):
     formals = expressions.first
     validate_formals(formals)
     # BEGIN PROBLEM 11
-    "*** YOUR CODE HERE ***"
+    return MuProcedure(formals, expressions.rest)
     # END PROBLEM 11
 
 

@@ -93,21 +93,17 @@ test = {
         {
           'code': r"""
           scm> (define x 5)
-          38ba916dc1f41eb239567ee41a251ecd
-          # locked
+          x
           scm> (define outer (lambda (x)
           ....   (lambda () (print x))))
-          71fe94b728b1cb1923a1c51c2533bcd8
-          # locked
+          outer
           scm> (define inner (outer 2))
-          1e0787dce99b0bae31afaf95cb7dddff
-          # locked
+          inner
           scm> (inner) ;; which x is accessed? which frame is the parent?
-          2b7cdec3904f986982cbd24a0bc12887
-          # locked
+          2
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {

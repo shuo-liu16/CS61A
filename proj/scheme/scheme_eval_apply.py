@@ -14,7 +14,9 @@ import scheme_forms
 
 def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     """Evaluate Scheme expression EXPR in Frame ENV.
-
+        scheme_eval 在给定环境中求值一个 Scheme 表达式。
+        scheme_eval 将评估重定向至在 scheme_forms.py 中找到的适当 do_?_form 函数
+        scheme_apply 对某些参数应用一个过程。
     >>> expr = read_line('(+ 2 2)')
     >>> expr
     Pair('+', Pair(2, Pair(2, nil)))
@@ -23,24 +25,20 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     """
     # 1. 处理原子符号 (Scheme 符号或自我评估的表达式)
     if scheme_symbolp(expr):
-        print("DEBUG:3")
         return env.lookup(expr)  # 查找符号在环境中的值
     
     # 2. 处理自我评估的表达式
     elif self_evaluating(expr):
-        print("DEBUG:4")
         return expr  # 直接返回表达式（例如数字、字符串等）
 
     # 3. 处理非原子表达式（即列表）
     if not scheme_listp(expr):
-        print("DEBUG:5")
         raise SchemeError('malformed list: {0}'.format(repl_str(expr)))  # 如果不是列表，抛出错误
     
     first, rest = expr.first, expr.rest  # 获取表达式的第一个元素和其余部分
 
     # 4. 如果第一个元素是特殊形式（例如 `if`, `define` 等），使用相应的处理函数
     if scheme_symbolp(first) and first in scheme_forms.SPECIAL_FORMS:
-        print("DEBUG:6")
         return scheme_forms.SPECIAL_FORMS[first](rest, env)  # 调用特殊形式的处理函数
     
     else:
@@ -51,7 +49,6 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         # 最后，scheme_apply(procedure, args, env) 会执行 `+` 操作符，传入参数 [2, 2]，结果为 4
 
         # BEGIN PROBLEM 3
-        print("DEBUG:6")
         procedure = scheme_eval(first, env)  # 求值操作符
         args = rest.map(lambda exp: scheme_eval(exp, env))  # 求值所有参数
         return scheme_apply(procedure, args, env)  # 应用操作符到参数
@@ -81,11 +78,16 @@ def scheme_apply(procedure, args, env):
             raise SchemeError('incorrect number of arguments: {0}'.format(procedure))
     elif isinstance(procedure, LambdaProcedure):
         # BEGIN PROBLEM 9
-        "*** YOUR CODE HERE ***"
+        # 生成一个新的环境，将参数绑定到传入的实参
+        new_env = procedure.env.make_child_frame(procedure.formals, args)  
+        # 执行 Lambda 的体 (body) 在新的环境中
+        return eval_all(procedure.body, new_env)
         # END PROBLEM 9
     elif isinstance(procedure, MuProcedure):
         # BEGIN PROBLEM 11
-        "*** YOUR CODE HERE ***"
+        # 理解 静态作用域和动态作用域
+        new_env = env.make_child_frame(procedure.formals, args)
+        return eval_all(procedure.body, new_env)
         # END PROBLEM 11
     else:
         assert False, "Unexpected procedure: {}".format(procedure)
@@ -105,8 +107,13 @@ def eval_all(expressions, env):
     >>> eval_all(read_line("((define x 2) x)"), create_global_frame())
     2
     """
-    # BEGIN PROBLEM 6
-    return scheme_eval(expressions.first, env) # replace this with lines of your own code
+    # BEGIN PROBLEM 6 , 按顺序在当前环境中求值每个 expression ，返回最后一个求值结果。
+    if expressions == nil:
+        return None
+    while expressions.rest != nil:
+        scheme_eval(expressions.first, env)
+        expressions = expressions.rest
+    return scheme_eval(expressions.first, env) 
     # END PROBLEM 6
 
 
