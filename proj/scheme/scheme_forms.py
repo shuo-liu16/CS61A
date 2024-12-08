@@ -65,6 +65,7 @@ def do_define_form(expressions, env):
         parameters = signature.rest  # e.g., (x y)
         function_body = expressions.rest  # e.g., (+ x y)
 
+        validate_formals(parameters)
         function = LambdaProcedure(parameters, function_body, env)
         # print("DEBUG:", function.__repr__())
         env.define(function_name, function)
