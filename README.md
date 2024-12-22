@@ -5,12 +5,13 @@
 - hw01-10：家庭作业
 - lab00-12：实验
 - proj：项目代码
-- project -> tests: 测试案例在这里，也许可以找到测试答案也说不定
+- project -> tests: 测试案例在这里，也许可以找到测试答案也说不定(我做过的仓库代码里面才有哦！)
 
 [课程网站地址](https://www.learncs.site/docs/curriculum-resource/cs61a/syllabus)
-> 文件夹格式代表已完成，zip格式代表未开始，已完成的可借鉴
-> 目前仍留有proj scheme 未解决，其余均解决完毕
-> 2024/11/4 update 总结了dp题目解题方法【cats -> Problem 7】
+> 完结撒花🎉🎉🎉,原谅我的拖延,至此完结！
+> 碎碎念: 原计划2-3周结束，没想到拖了这么久，有时候拖延真的很可怕，就像是滚雪球那样，越拖延就越拖延
+> 这个课程不难，希望你能克服对未知的恐惧，在课程中你的目的是基本了解编程的一些基本概念与抽象
+> 2024/12/22 update README.md
 ---
 
 <!-- TOC depthfrom:1 depthto:4 -->
@@ -27,10 +28,11 @@
         - [cats -> Problem 7 （minimum_mewtations函数）](#cats---problem-7-minimum_mewtations%E5%87%BD%E6%95%B0)
             - [解题步骤，首先你要明白这几点](#%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%E9%A6%96%E5%85%88%E4%BD%A0%E8%A6%81%E6%98%8E%E7%99%BD%E8%BF%99%E5%87%A0%E7%82%B9)
         - [Ants](#ants)
+        - [Scheme](#scheme)
         - [Hw4 -> Q3: Balanced](#hw4---q3-balanced)
         - [Hw7 -> Q1: Pow](#hw7---q1-pow)
         - [Lab10 -> Q2,Q3,Q4](#lab10---q2q3q4)
-        - [lab12 and hw10](#lab12-and-hw10)
+        - [lab12 and hw10 SQL](#lab12-and-hw10-sql)
     - [四、我认为值得注意的地方](#%E5%9B%9B%E6%88%91%E8%AE%A4%E4%B8%BA%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9)
     - [总结](#%E6%80%BB%E7%BB%93)
 
@@ -230,6 +232,41 @@ Hello，别想着在这里找太多教程了！这个项目目的就是为了让
 
 ---
 
+### Scheme
+
+这是旅程的最后一次冒险，他并非看起来那么困难，你只需要耐心阅读代码，理解其中的逻辑，即可wandering through the code. 本仓库是你最坚强的后盾！
+
+余者不再多提，我只强调两点：
+
+1. The first three parts：Pair类真的很重要，这涉及到一些格式问题，如果不能正确理解，你写出的代码可能无法运行。
+2. Part IV： 函数嵌套而已，注意不要在question.scm里使用中文注释，否则会发生如下报错：
+
+    ```scheme
+    scm> (load 'questions)
+        Traceback (most recent call last):
+        k (most recent call last):
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\ok\client\sources\ok_test\scheme.py", line 58, in evaluate
+            result = timer.timed(self.timeout, self.scheme.scheme_eval,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\ok\client\utils\timer.py", line 33, in timed
+            raise submission.error
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\ok\client\utils\timer.py", line 49, in run
+            self.result = self.fn(*self.args, **self.kargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\scheme_eval_apply.py", line 54, in scheme_eval
+            return scheme_apply(procedure, args, env)  # 应用操作符到参数
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\scheme_eval_apply.py", line 75, in scheme_apply
+            return procedure.py_func(*arr)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+        File "E:\Desktop files\code\py\CS61A\proj\scheme\scheme_builtins.py", line 369, in scheme_load
+            lines = infile.readlines()
+                    ^^^^^^^^^^^^^^^^^^
+        UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 390: illegal multibyte sequence
+    ```
+
+---
+
 ### Hw4 -> Q3: Balanced
 
 1. 移动式结构（Mobile）的定义：一个移动式结构由多个臂组成，每个臂可能悬挂一个行星（Planet）或另一个移动式结构（Mobile）。
@@ -362,7 +399,7 @@ def calc_apply(op, args):
 
 ---
 
-### lab12 and hw10
+### lab12 and hw10 (SQL)
 
 1. 如果你和我一样先完成了 HW 10，可能会感到有些困惑。不过，回过头来看 Lab 12，你会恍然大悟，因为基础语法和项目的完成方法在 Lab 12 中都有详细说明。
 2. 这一部分的目的是让大家初步了解 SQL 数据库语言的使用，从逻辑上来说并不复杂，主要是对基础语法的运用。因此，理解它们将对你的学习大有裨益。
@@ -452,7 +489,9 @@ ORDER BY
  7. scheme中，引号与准引号的用法，与py中f{value}相似
  8. 概念是相似的，语言是不同的，但相同的概念在不同的语言中都有展现
  9. 先模仿，再创造，最终超越，如果是初学者，碰到难以理解的也是正常的
+ 10. 期间遇到的报错，你是否能独自解决呢，要合理利用互联网资源哦！
+ 11. 有时知识付费，是一件很值得的事情。
 
 ## 总结
 
-本人较菜，有疏漏的地方请及时反馈，多多包涵呦！
+本人较菜，有疏漏的地方请及时反馈，多多包涵呦！我的旅程已经结束，各位旅行者们，且行且珍惜！
